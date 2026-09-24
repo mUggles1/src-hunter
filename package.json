@@ -1,0 +1,49 @@
+{
+  "name": "src-hunter-mcp",
+  "version": "1.0.0",
+  "description": "Production-grade MCP server for automated SRC vulnerability hunting",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "lint": "eslint src --ext .ts",
+    "test": "jest",
+    "sync-assets": "node dist/scripts/sync-assets.js",
+    "check-tools": "node dist/scripts/check-tools.js"
+  },
+  "keywords": [
+    "mcp",
+    "security",
+    "src",
+    "vulnerability",
+    "pentest",
+    "recon"
+  ],
+  "author": "Q",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "yaml": "^2.6.1",
+    "zod": "^3.24.1",
+    "winston": "^3.17.0",
+    "rate-limiter-flexible": "^5.0.3",
+    "cidr-matcher": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.14"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

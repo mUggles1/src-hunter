@@ -1,0 +1,10 @@
+{
+  "authorized_targets": [
+    "*.example.com",
+    "test.example.org"
+  ],
+  "src_platforms": [
+    "YourSRC"
+  ],
+  "notes": "⚠️ 示例配置。请替换为你已获得授权的目标。仅添加书面授权的域名，未经授权的扫描违法。复制本文件为 whitelist.json 使用。"
+}

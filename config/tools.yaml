@@ -1,0 +1,101 @@
+# 工具配置
+
+tools:
+  # 子域名枚举
+  subfinder:
+    enabled: true
+    path: subfinder
+    timeout_ms: 300000
+    rate_limit: '1/30s'
+    args:
+      - '-silent'
+      - '-all'
+
+  amass:
+    enabled: true
+    path: amass
+    timeout_ms: 600000
+    rate_limit: '1/60s'
+    args:
+      - 'enum'
+      - '-passive'
+
+  # 端口扫描
+  nmap:
+    enabled: true
+    path: nmap
+    timeout_ms: 600000
+    rate_limit: '1/10s'
+    args:
+      - '-Pn'
+      - '-T4'
+      - '-sV'
+
+  # Web 扫描
+  httpx:
+    enabled: true
+    path: httpx
+    timeout_ms: 60000
+    rate_limit: '5/60s'
+    args:
+      - '-silent'
+      - '-follow-redirects'
+
+  nuclei:
+    enabled: true
+    path: nuclei
+    timeout_ms: 600000
+    rate_limit: '1/60s'
+    args:
+      - '-silent'
+      - '-jsonl'
+      - '-rate-limit'
+      - '10'
+
+  dirsearch:
+    enabled: true
+    path: dirsearch
+    timeout_ms: 300000
+    rate_limit: '1/30s'
+    args:
+      - '--quiet'
+      - '--format=json'
+
+# 安全配置
+security:
+  safe_mode: true
+  max_requests_per_minute: 30
+  forbidden_payloads:
+    - 'rm -rf'
+    - 'DROP TABLE'
+    - 'DELETE FROM'
+    - '<script>alert'
+    - 'eval('
+    - '; cat /etc/passwd'
+    - '| wget'
+    - '| curl'
+
+  payload_filters:
+    - pattern: '/etc/passwd'
+      replacement: '/etc/hostname'
+    - pattern: 'alert(document.cookie)'
+      replacement: 'alert(1)'
+    - pattern: 'sleep(10)'
+      replacement: 'sleep(1)'
+
+# 扫描限制
+limits:
+  max_subdomains: 500
+  max_ports: 1000
+  max_directories: 5000
+  max_concurrent_requests: 10
+  max_scan_duration_ms: 3600000  # 1 小时
+
+# 报告配置
+reporting:
+  auto_save: true
+  formats:
+    - md
+    - json
+  include_screenshots: false
+  severity_threshold: 'medium'

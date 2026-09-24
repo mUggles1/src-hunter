@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "src-hunter": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}

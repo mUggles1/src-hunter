@@ -1,0 +1,24 @@
+{
+  "example.com": {
+    "id": "example-src",
+    "name": "Example Security Response Center",
+    "url": "https://security.example.com",
+    "scope": {
+      "domains": [
+        "example.com",
+        "www.example.com"
+      ]
+    },
+    "allowed_types": [
+      "sql_injection",
+      "xss",
+      "csrf"
+    ],
+    "forbidden": [
+      "DDoS",
+      "社会工程学"
+    ],
+    "updated_at": "2026-01-01T00:00:00Z",
+    "notes": "示例资产库。复制本文件为 assets.json 使用。实际测试范围以平台官方公告为准。"
+  }
+}

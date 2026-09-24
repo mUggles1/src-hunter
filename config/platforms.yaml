@@ -1,0 +1,100 @@
+# SRC 平台配置
+
+platforms:
+  # 360 安全响应中心
+  - id: 360src
+    name: 360 Security Response Center
+    url: https://security.360.cn/rank/index.html
+    selectors:
+      scope: '.table tbody tr td:first-child'
+      rules: '.rules-content li'
+      forbidden: '.forbidden-list li'
+    notes: 360 集团旗下所有产品
+
+  # 百度安全响应中心
+  - id: baidusrc
+    name: Baidu Security Response Center
+    url: https://sec.baidu.com/
+    selectors:
+      scope: '.scope-list .domain'
+      rules: '.rule-item'
+    notes: 百度系产品
+
+  # 京东安全响应中心
+  - id: jdsrc
+    name: JD Security Response Center
+    url: https://security.jd.com/
+    selectors:
+      scope: '.asset-list .item'
+      rules: '.policy-content'
+    notes: 京东商城及相关业务
+
+  # 阿里巴巴安全响应中心
+  - id: alisrc
+    name: Alibaba Security Response Center
+    url: https://security.alibaba.com/
+    selectors:
+      scope: '.range-table td'
+      rules: '.rule-box'
+    notes: 阿里系所有产品
+
+  # 腾讯安全响应中心
+  - id: tsrc
+    name: Tencent Security Response Center
+    url: https://security.tencent.com/
+    selectors:
+      scope: '.scope-domain'
+      rules: '.rule-list'
+    notes: 腾讯系产品
+
+  # 字节跳动安全响应中心
+  - id: bytedancesrc
+    name: ByteDance Security Response Center
+    url: https://security.bytedance.com/
+    selectors:
+      scope: '.assets .domain'
+      rules: '.rules-content'
+    notes: 字节跳动旗下产品
+
+  # 小米安全响应中心
+  - id: xiaomisrc
+    name: Xiaomi Security Response Center
+    url: https://sec.xiaomi.com/
+    selectors:
+      scope: '.scope-item'
+      rules: '.vuln-policy'
+    notes: 小米生态链产品
+
+  # 华为安全响应中心
+  - id: psirt
+    name: Huawei PSIRT
+    url: https://www.huawei.com/cn/psirt
+    selectors:
+      scope: '.product-list .item'
+      rules: '.disclosure-policy'
+    notes: 华为企业产品
+
+  # B站安全响应中心
+  - id: bilibilisrc
+    name: Bilibili Security Response Center
+    url: https://security.bilibili.com/
+    selectors:
+      scope: '.range-content'
+      rules: '.policy-item'
+    notes: 哔哩哔哩相关业务
+
+  # 滴滴安全响应中心
+  - id: didisrc
+    name: Didi Security Response Center
+    url: https://sec.didichuxing.com/
+    selectors:
+      scope: '.scope-table td'
+      rules: '.rule-content'
+    notes: 滴滴出行相关产品
+
+# 通用配置
+common:
+  user_agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+  timeout: 30000
+  retry: 3
+  delay_between_requests: 2000
