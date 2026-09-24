@@ -207,7 +207,3 @@ cd C:\Users\Q\.claude\mcp-servers\src-hunter\scripts
 ## 📄 许可证
 
 MIT License
-
----
-
-**由 Claude Code 自动生成** | 版本 1.0.0 | 2026-09-24
